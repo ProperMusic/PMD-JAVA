@@ -62,6 +62,7 @@ public class JCrypt {
 
 		MessageDigest sha;
 		try {
+//			Security.
 			sha = MessageDigest.getInstance("SHA-1");
 			sha.reset();
 			sha.update(ba);

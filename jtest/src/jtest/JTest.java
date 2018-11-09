@@ -1,6 +1,6 @@
 package jtest;
 //import jtest.JCrypt;
-import com.samrae.jtools.*;
+import com.samrae.jtools.JCrypt;
 public class JTest {
 
 	public static void main(String[] args) {
@@ -16,6 +16,7 @@ public class JTest {
 		out(hex + " " + hex.length());
 		
 		out(JCrypt.toBase64(sha1));
+//		MessageDigest.
 		
 		
 	}
