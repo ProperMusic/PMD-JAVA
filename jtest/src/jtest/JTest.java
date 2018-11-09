@@ -1,5 +1,6 @@
 package jtest;
-import jtest.JCrypt;
+//import jtest.JCrypt;
+import com.samrae.jtools.*;
 public class JTest {
 
 	public static void main(String[] args) {
@@ -11,6 +12,9 @@ public class JTest {
 		
 		byte[] sha1 = JCrypt.getSHA1(hello);
 		out(JCrypt.SHA1toString(sha1));
+		String hex = JCrypt.SHA1toHexString(sha1);
+		out(hex + " " + hex.length());
+		
 		out(JCrypt.toBase64(sha1));
 		
 		

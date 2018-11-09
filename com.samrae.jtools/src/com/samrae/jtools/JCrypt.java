@@ -1,6 +1,7 @@
 package com.samrae.jtools;
 
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
@@ -25,16 +26,25 @@ public class JCrypt {
 		Base64.Decoder b64 = Base64.getDecoder();
 		return b64.decode(s);
 	}
+	
+	public static String SHA1toHexString(byte[] bytes) {
+		String r = "";
+		
+		for (int i = 0; i < bytes.length; i += 1) {
+			String s = ("00" + Integer.toHexString(bytes[i] & 0xff));
+//			System.out.print("sbefore = " + s + " ");
+			s = s.substring(s.length()-2, s.length());
+//			System.out.print("safter = " + s + "\n");
+			r += s;
+			
+		}
+		return r;
+	}
 
 	public static String SHA1toString(byte[] bytes) {
-
-		try {
-			return new String(bytes, "UTF-8");
-		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null;
+		
+		return new String(bytes, StandardCharsets.UTF_8);
+		
 
 	}
 
